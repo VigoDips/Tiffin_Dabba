@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Form</title>
+ 
+
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+  }
+  
+  .container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  h1 {
+    text-align: center;
+    
+  }
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+}
+
+.alert-info {
+  color: #31708f;
+  background-color: #d9edf7;
+  border-color: #bce8f1;
+}
+  
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+  }
+  
+  input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: orange;
+  }
+</style>
+ </head>
+<body>
+
+<h1>Registration Form</h1>
+
+<div th:if="${param.success=='true'}">
+<div class="alert alert-info">Successfully Registered.</div>
+  </div>
+
+<div class="container">
+<form id="registrationform" th:action="@{/registration}" method="post" th:object= "${user}">
+    <input type="text" name="firstname" placeholder="Firstname" th:field="*{firstname}" required autofocus="autofocus"/>
+    <input type="text" name="lastname" placeholder="Lastname" th:field="*{lastname}" required autofocus="autofocus"/ >
+    <input type="email" name="email" placeholder="Email" th:field="*{email}" required autofocus="autofocus"/>
+    <input type="password" name="password" placeholder="Password" th:field="*{password}" required autofocus="autofocus"/>
+    <input type="password" name="confirm_password" placeholder="Confirm Password" >
+    <input type="submit" value="Register">
+    <span>Already Registered ? <a href="/" th:href="@{/login}">Login Here</a></span>
+  </form>
+</div>
+
+
+<script th:inline="javascript">
+    document.addEventListener("DOMContentLoaded", function () {
+        var paramSuccess = /*[[${param.success}]]*/ true; 
+
+        if (paramSuccess) {
+            // Create a div element for the success message
+            var successMessageDiv = document.createElement("div");
+            successMessageDiv.classList.add("alert", "alert-info");
+            successMessageDiv.textContent = "Successfully Registered.";
+
+            // Append the success message div to the document body or a specific container
+            document.body.appendChild(successMessageDiv);
+        }
+
+        const registrationForm = document.getElementById("registrationform");
+
+        registrationForm.addEventListener("submit", function (event) {
+            event.preventDefault();
+
+            // You can perform form validation here if needed
+
+            // Simulate successful registration
+            displaySuccessMessage();
+        });
+
+        function displaySuccessMessage() {
+            const successMessageDiv = document.createElement("div");
+            successMessageDiv.classList.add("alert", "alert-info");
+            successMessageDiv.textContent = "Successfully Registered.";
+
+            document.body.appendChild(successMessageDiv);
+        }
+    });
+</script>
+</body>
+</html>

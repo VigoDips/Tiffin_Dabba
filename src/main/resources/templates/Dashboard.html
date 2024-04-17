@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<h2></h2>
+<!-- Navigation Bar -->
+<header>
+  <h1>Welcome,[[${user.getFirstname()}]]</h1>
+  <span sec:authorize="isAuthenticate">
+  <a th:href="@{/logout}">Logout</a>
+  </span>
+  <nav>
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Orders</a></li>
+      <li><a href="#">Products</a></li>
+      <li><a href="#">Customers</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+<!-- Sidebar -->
+<aside>
+  <ul>
+    <li><a href="#">Dashboard</a></li>
+    <li><a href="#">Orders</a></li>
+    <li><a href="#">Products</a></li>
+    <li><a href="#">Customers</a></li>
+    
+  </ul>
+</aside>
+
+<!-- Main Content -->
+<main>
+  <h2>Welcome to the Admin Dashboard</h2>
+  <p>This is where you can manage orders, products, customers, and generate reports.</p>
+</main>
+
+</body>
+</html>

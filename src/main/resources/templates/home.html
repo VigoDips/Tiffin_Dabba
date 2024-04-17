@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tiffin Dabba</title>
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+    />
+
+    <!-- font awesome cdn link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- header section starts  -->
+
+    <header class="header">
+      <a href="#" class="logo"><i class="fas fa-box-open"></i> tiffin </a>
+
+      <nav class="navbar">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#features">Features</a>
+        <a href="/products">Menu</a>
+        <a href="#review">Review</a>
+      </nav>
+
+      <div class="icons">
+        <div class="fas fa-bars" id="menu-btn"></div>
+        <div class="fas fa-search" id="search-btn"></div>
+        <div class="fas fa-shopping-cart" id="cart-btn"></div>
+        <div class="fas fa-user" id="login-btn"></div>
+      </div>
+
+      <form action="" class="search-form">
+        <input type="search" id="search-box" placeholder="search here..." />
+        <label for="search-box" class="fas fa-search"></label>
+      </form>
+
+      <div class="shopping-cart">
+        <div class="box">
+          <i class="fas fa-trash"></i>
+          <img src="image/momo.png" alt="" />
+          <div class="content">
+            <h3>chicken momo</h3>
+            <span class="price">Rs 180</span>
+            <span class="quantity">qty : 2</span>
+          </div>
+        </div>
+        <div class="box">
+          <i class="fas fa-trash"></i>
+          <img src="image/biryani.png" alt="" />
+          <div class="content">
+            <h3>birayani</h3>
+            <span class="price">Rs 250</span>
+            <span class="quantity">qty : 1</span>
+          </div>
+        </div>
+        <div class="box">
+          <i class="fas fa-trash"></i>
+          <img src="image/pakoda.png" alt="" />
+          <div class="content">
+            <h3>pakoda</h3>
+            <span class="price">Rs 120</span>
+            <span class="quantity">qty : 1</span>
+          </div>
+        </div>
+        <div class="total">total : Rs 730/-</div>
+        <a href="#" class="btn">checkout</a>
+      </div>
+
+         
+      <div class="message" th:if="${param.error}">
+      Invalid username or Password
+      </div>
+      <div class="message" th:if="${param.logout}">
+        Logout Successfully
+      </div>
+      <form action="/login" method="post" class="login-form">
+        <h3>login now</h3>
+        <input id="username" name="username" type="email" placeholder="your email" class="box" />
+        <input type="password" placeholder="your password" class="box" />
+        <p>Forget your password <a href="#">Click here</a></p>
+        <p>Don't have an account <a href="/registration">Create now</a></p>
+        <input type="submit" value="login now" class="btn" />
+      </form>
+      
+    </header>
+
+    <!-- header section ends -->
+
+    <!-- home section starts  -->
+
+    <section class="home" id="home">
+      <div class="content">
+        <h3>The <span>flavour</span> of tradition</h3>
+        <p>
+          We are a multi-cuisine restaurant offering a wide variety of food
+          experience in both casual and fine dining environment.
+        </p>
+        <a href="#categories" class="btn">Explore Menu</a>
+      </div>
+    </section>
+
+    <!-- home section ends -->
+
+    <!-- location section starts  -->
+
+    <section class="about" id="about">
+      <h1 class="heading"><span>about us</span></h1>
+
+      <div class="box-container">
+        <div class="box">
+          <div class="content">
+            <div class="icons"></div>
+            <p style="padding-left: 5%; padding-right: 5%">
+              We are passionate about delivering delicious and nutritious meals
+              right to your doorstep. Our mission is simple: to provide
+              convenient, home-cooked meals that cater to your busy lifestyle.
+              With years of culinary expertise, our chefs meticulously craft
+              each dish with the freshest ingredients, ensuring both taste and
+              health are never compromised. Whether you're craving traditional
+              favorites or exploring new flavors, we have something to tantalize
+              every palate. But our commitment goes beyond just great food. We
+              pride ourselves on exceptional customer service, striving to make
+              every dining experience seamless and enjoyable. Your satisfaction
+              is our priority, and we're always here to listen and adapt to your
+              needs. Join us on a culinary journey where convenience meets
+              quality, and let us take the hassle out of mealtime. Thank you for
+              choosing tiffin - where every bite is a taste of home.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- location section ends -->
+    <!-- features section starts  -->
+
+    <section class="features" id="features">
+      <h1 class="heading">our <span>features</span></h1>
+
+      <div class="box-container">
+        <div class="box">
+          <img src="image/feature-img-1.png" alt="" />
+          <h3>Quality Food</h3>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt,
+            earum!
+          </p>
+          <a href="#" class="btn">read more</a>
+        </div>
+
+        <div class="box">
+          <img src="image/feature-img-2.png" alt="" />
+          <h3>Best Service</h3>
+          <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt,
+            earum!
+          </p>
+          <a href="#" class="btn">read more</a>
+        </div>
+
+        <div class="box">
+          <img src="image/esewa.png" alt="" />
+          <h3>Easy Payments</h3>
+          <p>Pay via esewa, khalti or phonePay.</p>
+          <a href="#" class="btn">read more</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- features section ends -->
+
+    <!-- menu section starts  -->
+
+    <section class="categories" id="categories">
+      <h1 class="heading">our <span>specials</span></h1>
+
+      <div class="box-container">
+        <div class="box">
+          <img src="image/daalbhat.png" alt="" />
+          <h3>khana set</h3>
+          <a href="#" class="btn">order now</a>
+        </div>
+
+        <div class="box">
+          <img src="image/momo.png" alt="" />
+          <h3>chicken momo</h3>
+          <p>upto 25% off</p>
+          <a href="#" class="btn">order now</a>
+        </div>
+
+        <div class="box">
+          <img src="image/biryani.png" alt="" />
+          <h3>birayani</h3>
+          <p>upto 15% off</p>
+          <a href="#" class="btn">order now</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- menu section ends -->
+
+    <!-- overall menu section starts  -->
+
+    <section class="products" id="products">
+      <h1 class="heading" style="border: 2px solid black">Explore our menu</h1>
+
+      <div class="swiper product-slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide box">
+            <img src="image/momo.png" alt="" />
+            <h3>chicken momo</h3>
+            <div class="price">rs 180</div>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <a href="#" class="btn">add to cart</a>
+          </div>
+
+          <div class="swiper-slide box">
+            <img src="image/biryani.png" alt="" />
+            <h3>birayani</h3>
+            <div class="price">Rs 250</div>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <a href="#" class="btn">add to cart</a>
+          </div>
+
+          <div class="swiper-slide box">
+            <img src="image/daalbhat.png" alt="" />
+            <h3>Khana Set</h3>
+            <div class="price">Rs 200</div>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <a href="#" class="btn">add to cart</a>
+          </div>
+
+          <div class="swiper-slide box">
+            <img src="image/pakoda.png" alt="" />
+            <h3>pakoda</h3>
+            <div class="price">Rs 120</div>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <a href="#" class="btn">add to cart</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="swiper product-slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide box">
+            <img src="image/kattiroll.png" alt="" />
+            <h3>Kathi Roll</h3>
+            <div class="price">Rs 250</div>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <a href="#" class="btn">add to cart</a>
+          </div>
+
+          <div class="swiper-slide box">
+            <img src="image/laphing.png" alt="" />
+            <h3>laphing</h3>
+            <div class="price">Rs 120</div>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <a href="#" class="btn">add to cart</a>
+          </div>
+
+          <div class="swiper-slide box">
+            <img src="image/Veg-Chowmein.png" alt="" />
+            <h3>Chowmin</h3>
+            <div class="price">Rs 120</div>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <a href="#" class="btn">add to cart</a>
+          </div>
+
+          <div class="swiper-slide box">
+            <img src="image/pasta1.png" alt="" />
+            <h3>pasta</h3>
+            <div class="price">Rs 180</div>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+            <a href="#" class="btn">add to cart</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- overall menu section ends -->
+
+    <!-- review section starts  -->
+
+    <section class="review" id="review">
+      <h1 class="heading">customer's <span>review</span></h1>
+
+      <div class="swiper review-slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide box">
+            <img src="image/dipubhai.png" alt="" />
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde
+              sunt fugiat dolore ipsum id est maxime ad tempore quasi tenetur.
+            </p>
+            <h3>Dipdarshan Bhattarai</h3>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+          </div>
+
+          <div class="swiper-slide box">
+            <img src="image/sahil.png" alt="" />
+            <p>Good quality food and timely service. I liked it.</p>
+            <h3>Sahil Bhatta</h3>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+          </div>
+
+          <div class="swiper-slide box">
+            <img src="image/priyans.png" alt="" />
+            <p>
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde
+              sunt fugiat dolore ipsum id est maxime ad tempore quasi tenetur.
+            </p>
+            <h3>Priyans Bhatta</h3>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
+            </div>
+          </div>
+
+          <div class="swiper-slide box">
+            <img src="image/vardha.jpeg" alt="" />
+            <p>खाना एकदम मिठो थ्यो, सालार फिल्म हेर्दाई खाए</p>
+            <h3>Vardha Raj Manaar</h3>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- review section ends -->
+
+    <!-- location section starts  -->
+
+    <section class="location" id="location">
+      <h1 class="heading">our <span>location</span></h1>
+
+      <div class="box-container">
+        <div class="box">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3533.181691218025!2d85.33869657507972!3d27.68077877619766!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19ecef2eedd1%3A0x668e25466241a9bd!2sKoteshwor%20Mahadevasthan!5e0!3m2!1sen!2snp!4v1712434812293!5m2!1sen!2snp"
+            width="100%"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+          <div class="content">
+            <div class="icons"></div>
+            <h3>Mahadevsthan Marg, Kathmandu 44600</h3>
+            <a href="#" class="btn">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- location section ends -->
+
+    <!-- footer section starts  -->
+
+    <section class="footer">
+      <div class="box-container">
+        <div class="box">
+          <h3>tiffin <i class="fas fa-box-open"></i></h3>
+          <p>
+            Key factors: the service , the quality of food, and whether you feel
+            like you're getting your money's worth.
+          </p>
+          <div class="share">
+            <a
+              href="https://www.facebook.com/profile.php?id=100006929117973"
+              target="_blank"
+              class="fab fa-facebook-f"
+            ></a>
+            <a href="#" target="_blank" class="fab fa-twitter"></a>
+            <a
+              href="https://www.instagram.com/dipx_bhattarai/"
+              target="_blank"
+              class="fab fa-instagram"
+            ></a>
+          </div>
+        </div>
+
+        <div class="box">
+          <h3>contact info</h3>
+          <a href="#" class="links">
+            <i class="fas fa-phone"></i> +977 9860615435
+          </a>
+          <a href="#" class="links">
+            <i class="fas fa-phone"></i> +977 9840718794
+          </a>
+          <a href="#" class="links">
+            <i class="fas fa-envelope"></i> bdipdarshan27@gmail.com
+          </a>
+          <a href="#" class="links">
+            <i class="fas fa-map-marker-alt"></i> kathmandu, nepal
+          </a>
+        </div>
+
+        <div class="box">
+          <h3>quick links</h3>
+          <a href="#home" class="links">
+            <i class="fas fa-arrow-right"></i> home
+          </a>
+          <a href="#about" class="links">
+            <i class="fas fa-arrow-right"></i> about
+          </a>
+          <a href="#features" class="links">
+            <i class="fas fa-arrow-right"></i> features
+          </a>
+          <a href="#categories" class="links">
+            <i class="fas fa-arrow-right"></i> menu
+          </a>
+          <a href="#review" class="links">
+            <i class="fas fa-arrow-right"></i> review
+          </a>
+        </div>
+
+        <div class="box">
+          <h3>get help</h3>
+          <a href="#" class="links"> How to order? </a>
+          <a href="#" class="links"> FAQs </a>
+        </div>
+      </div>
+
+      <div class="credit">
+        © copyright 2024 <span> </span> | All rights reserved
+      </div>
+    </section>
+
+    <!-- footer section ends -->
+
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+    <!-- custom js file link  -->
+    <script src="js/script.js"></script>
+  </body>
+</html>
