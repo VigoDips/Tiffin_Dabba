@@ -1,5 +1,7 @@
 package com.kitchen.Tiffin.config;
 
+
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -11,10 +13,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
-import com.kitchen.Tiffin.services.CustomerSuccessHandler;
-import com.kitchen.Tiffin.services.CustomerUserDetailService;
-
-
+import com.kitchen.Tiffin.services.CustomSuccessHandler;
+import com.kitchen.Tiffin.services.CustomUserDetailService;
 
 @Configuration
 @EnableWebSecurity
@@ -22,10 +22,10 @@ public class SecurityConfig {
 	
 	
 	@Autowired
-	CustomerSuccessHandler customerSuccessHandler;
+	CustomSuccessHandler customSuccessHandler;
 	
 	@Autowired
-	CustomerUserDetailService customerUserDetailsService;
+	CustomUserDetailService customUserDetailService;
 	
 	@Bean
 	public static PasswordEncoder passwordEncoder() {
@@ -38,13 +38,13 @@ public class SecurityConfig {
 		
 		http.csrf(c -> c.disable())
 		
-		.authorizeHttpRequests(request -> request.requestMatchers("/adminpage")
-				.hasAuthority("ADMIN").requestMatchers("/userpage").hasAuthority("USER")
-				.requestMatchers("/registration", "/css/**","/js/**","/image/**").permitAll()
+		.authorizeHttpRequests(request -> request.requestMatchers("/admin-page")
+				.hasAuthority("ADMIN").requestMatchers("/user-page").hasAuthority("USER")
+				.requestMatchers("/registration", "/css/**","/image/**","/js/**").permitAll()
 				.anyRequest().authenticated())
 		
 		.formLogin(form -> form.loginPage("/login").loginProcessingUrl("/login")
-				.successHandler(customerSuccessHandler).permitAll())
+				.successHandler(customSuccessHandler).permitAll())
 		
 		.logout(form -> form.invalidateHttpSession(true).clearAuthentication(true)
 				.logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
@@ -56,7 +56,7 @@ public class SecurityConfig {
 	
 	@Autowired
 	public void configure (AuthenticationManagerBuilder auth) throws Exception {
-		auth.userDetailsService(customerUserDetailsService).passwordEncoder(passwordEncoder());
+		auth.userDetailsService(customUserDetailService).passwordEncoder(passwordEncoder());
 	}
 
 }

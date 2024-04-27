@@ -11,6 +11,7 @@
 </head>
 <body>
 <div class="container">
+<a href="/create">Create Product</a>
 <table class="table">
 <thead>
 <tr>
@@ -40,10 +41,10 @@
    th:href="@{/products/create(id=${product.proId})}">Add</a>
 
 <a class="btn btn-primary btn-sm"
-   th:href="@{/products/edit(id=${product.proId})}">Edit</a>
+   th:href="@{/edit(proId=${product.proId})}">Edit</a>
    
 <a class="btn btn-primary btn-sm"
-   th:href="@{/products/delete(id=${product.proId})}"
+   th:href="@{/delete(proId=${product.proId})}"
    onclick="return confirm('Are You Sure?')">Delete</a>
 </td>
 </tr>

@@ -1,46 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Admin Dashboard</title>
-<link rel="stylesheet" href="css/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <style>
+        /* Dashboard layout styles */
+        .dashboard {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            grid-template-rows: auto;
+            grid-template-areas: 
+                "sidebar main";
+            min-height: 100vh;
+        }
+        .sidebar {
+            grid-area: sidebar;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+        }
+        a{
+        color:white;
+        }
+        .main {
+            grid-area: main;
+            padding: 20px;
+        }
+        /* Logout link styles */
+        .logout-link {
+            color: #fff;
+            text-decoration: none;
+            background-color: #007bff;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+        .logout-link:hover {
+            background-color: orange;
+        }
+    </style>
 </head>
 <body>
-<h2></h2>
-<!-- Navigation Bar -->
-<header>
-  <h1>Welcome,[[${user.getFirstname()}]]</h1>
-  <span sec:authorize="isAuthenticate">
-  <a th:href="@{/logout}">Logout</a>
-  </span>
-  <nav>
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">Orders</a></li>
-      <li><a href="#">Products</a></li>
-      <li><a href="#">Customers</a></li>
-      
-    </ul>
-  </nav>
-</header>
-
-<!-- Sidebar -->
-<aside>
-  <ul>
-    <li><a href="#">Dashboard</a></li>
-    <li><a href="#">Orders</a></li>
-    <li><a href="#">Products</a></li>
-    <li><a href="#">Customers</a></li>
-    
-  </ul>
-</aside>
-
-<!-- Main Content -->
-<main>
-  <h2>Welcome to the Admin Dashboard</h2>
-  <p>This is where you can manage orders, products, customers, and generate reports.</p>
-</main>
-
+    <div class="dashboard">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <h2>Admin Dashboard</h2>
+            <ul>
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Users</a></li>
+                <li><a href="/products">Products</a></li>
+                <li><a href="#">Orders</a></li>
+            </ul>
+            <!-- Logout link -->
+            <a class="logout-link" href="/logout">Logout</a>
+        </div>
+        <!-- Main content -->
+        <div class="main">
+            <h1>Welcome to the Admin Dashboard</h1>
+            <p>This is where you can manage your website's content and settings.</p>
+            <div>
+                <h2>Recent Orders</h2>
+                <ul>
+                    <li>Order #1</li>
+                    <li>Order #2</li>
+                    <li>Order #3</li>
+                </ul>
+            </div>
+            <div>
+                <h2>Site Statistics</h2>
+                <p>Total users: 1</p>
+                <p>Total products:6</p>
+                <p>Total orders: 0</p>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

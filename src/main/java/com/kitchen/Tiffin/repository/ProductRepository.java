@@ -8,8 +8,6 @@ import com.kitchen.Tiffin.model.Product;
 
 public interface ProductRepository extends JpaRepository<Product,Integer>{
 
-	//List<Product> findAll();
-	 
 
 	
 

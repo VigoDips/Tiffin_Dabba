@@ -2,24 +2,27 @@ package com.kitchen.Tiffin.web.dto;
 
 public class UserRegistrationDTO {
 
-	private String firstname;
-	private String lastname;
-	private String email;
-	private String password;
-	
-	public UserRegistrationDTO(String firstname, String lastname, String email, String password) {
-		super();
-		this.firstname = firstname;
-		this.lastname = lastname;
-		this.email = email;
-		this.password = password;
-	}
+    private String firstname;
+    private String lastname;
+    private String email;
+    private String role;
+    private String password;
+    
+    public UserRegistrationDTO() {
+        // Default constructor
+    }
 
-	public UserRegistrationDTO() {
-		// TODO Auto-generated constructor stub
-	}
+    public UserRegistrationDTO(String firstname, String lastname, String email, String role, String password) {
+        super();
+    	this.firstname = firstname;
+        this.lastname = lastname;
+        this.email = email;
+        this.role = role;
+        this.password = password;
+    }
 
-	public String getFirstname() {
+    // Getters and setters
+    public String getFirstname() {
 		return firstname;
 	}
 	public void setFirstname(String firstname) {
@@ -37,11 +40,19 @@ public class UserRegistrationDTO {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	
+	public String getRole() {
+		return role;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
 	public String getPassword() {
 		return password;
 	}
 	public void setPassword(String password) {
 		this.password = password;
-	}
-	
+	} 
 }
+

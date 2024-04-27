@@ -37,11 +37,7 @@
       <div class="icons">
         <div class="fas fa-bars" id="menu-btn"></div>
         <div class="fas fa-search" id="search-btn"></div>
-        <a href="/cart" id="cart-btn">
-    <div class="fas fa-shopping-cart"></div>
-    <span th:text="${cartcount}"></span>
-</a>
-        
+        <div class="fas fa-shopping-cart" id="cart-btn"></div>
         <div class="fas fa-user" id="login-btn"></div>
       </div>
 
@@ -175,140 +171,128 @@
     <!-- overall menu section starts  -->
 
     <section class="products" id="products">
+      <h1 class="heading" style="border: 2px solid black">Explore our menu</h1>
 
-    <h1 class="heading" style="border: 2px solid black;"> Explore our menu </h1>
-
-    <div class="swiper product-slider">
-
+      <div class="swiper product-slider">
         <div class="swiper-wrapper">
-
-            <div class="swiper-slide box">
-                <img src="image/momo.png" alt="">
-                <h3>chicken momo</h3>
-                <div class="price"> rs 180 </div>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-                 <a th:href="@{'/addToCart/' + product.proId}" class="btn">add to cart</a>
+          <div class="swiper-slide box">
+            <img src="image/momo.png" alt="" />
+            <h3>chicken momo</h3>
+            <div class="price">rs 180</div>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
             </div>
+            <a href="#" class="btn">add to cart</a>
+          </div>
 
-            <div class="swiper-slide box">
-                <img src="image/biryani.png" alt="">
-                <h3>Biryani</h3>
-                <div class="price"> Rs 199 </div>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-               <a th:href="@{'/addToCart/' + ${product.proId}}" class="btn">Add to Cart</a>
-               
+          <div class="swiper-slide box">
+            <img src="image/biryani.png" alt="" />
+            <h3>birayani</h3>
+            <div class="price">Rs 250</div>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
             </div>
+            <a href="#" class="btn">add to cart</a>
+          </div>
 
-            <div class="swiper-slide box">
-                <img src="image/daalbhat.png" alt="">
-                <h3>Khana Set</h3>
-                <div class="price"> Rs 200 </div>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-                <a href="#" class="btn">add to cart</a>
+          <div class="swiper-slide box">
+            <img src="image/daalbhat.png" alt="" />
+            <h3>Khana Set</h3>
+            <div class="price">Rs 200</div>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
             </div>
+            <a href="#" class="btn">add to cart</a>
+          </div>
 
-            <div class="swiper-slide box">
-                <img src="image/pakoda.png" alt="">
-                <h3>pakoda</h3>
-                <div class="price"> Rs 120 </div>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-                <a href="#" class="btn">add to cart</a>
+          <div class="swiper-slide box">
+            <img src="image/pakoda.png" alt="" />
+            <h3>pakoda</h3>
+            <div class="price">Rs 120</div>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
             </div>
-
+            <a href="#" class="btn">add to cart</a>
+          </div>
         </div>
+      </div>
 
-    </div>
-
-    <div class="swiper product-slider">
-
+      <div class="swiper product-slider">
         <div class="swiper-wrapper">
-
-            <div class="swiper-slide box">
-                <img src="image/kattiroll.png" alt="">
-                <h3>Kathi Roll</h3>
-                <div class="price"> Rs 250 </div>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-                <a href="#" class="btn">add to cart</a>
+          <div class="swiper-slide box">
+            <img src="image/kattiroll.png" alt="" />
+            <h3>Kathi Roll</h3>
+            <div class="price">Rs 250</div>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
             </div>
+            <a href="#" class="btn">add to cart</a>
+          </div>
 
-            <div class="swiper-slide box">
-                <img src="image/laphing.png" alt="">
-                <h3>laphing</h3>
-                <div class="price"> Rs 120 </div>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-                <a href="#" class="btn">add to cart</a>
+          <div class="swiper-slide box">
+            <img src="image/laphing.png" alt="" />
+            <h3>laphing</h3>
+            <div class="price">Rs 120</div>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
             </div>
+            <a href="#" class="btn">add to cart</a>
+          </div>
 
-            <div class="swiper-slide box">
-                <img src="image/Veg-Chowmein.png" alt="">
-                <h3>Chowmin</h3>
-                <div class="price"> Rs 120 </div>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-                <a href="#" class="btn">add to cart</a>
+          <div class="swiper-slide box">
+            <img src="image/Veg-Chowmein.png" alt="" />
+            <h3>Chowmin</h3>
+            <div class="price">Rs 120</div>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
             </div>
+            <a href="#" class="btn">add to cart</a>
+          </div>
 
-            <div class="swiper-slide box">
-                <img src="image/pasta1.png" alt="">
-                <h3>pasta</h3>
-                <div class="price"> Rs 180 </div>
-                <div class="stars">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star-half-alt"></i>
-                </div>
-                <a href="#" class="btn">add to cart</a>
+          <div class="swiper-slide box">
+            <img src="image/pasta1.png" alt="" />
+            <h3>pasta</h3>
+            <div class="price">Rs 180</div>
+            <div class="stars">
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star"></i>
+              <i class="fas fa-star-half-alt"></i>
             </div>
-
+            <a href="#" class="btn">add to cart</a>
+          </div>
         </div>
-
-    </div>
-
-
-</section>
+      </div>
+    </section>
 
     <!-- overall menu section ends -->
 

@@ -1,41 +1,39 @@
 package com.kitchen.Tiffin.services;
-
 import java.util.Collection;
+import java.util.List;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import com.kitchen.Tiffin.model.User;
 
-public class CustomerUserDetail implements UserDetails{
-    
+public class CustomUserDetail implements UserDetails {
+	
 	private User user;
 	
-	public CustomerUserDetail(User user) {
-		super();
+	public CustomUserDetail(User user) {
 		this.user = user;
 	}
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		// TODO Auto-generated method stub
-		return null;
+		return List.of(() -> user.getRole());
+	}
+	
+	public String getFirsname() {
+		return user.getFirstname();
 	}
 
 	@Override
 	public String getPassword() {
-		// TODO Auto-generated method stub
 		return user.getPassword();
 	}
 
 	@Override
 	public String getUsername() {
 		// TODO Auto-generated method stub
-		return user.getemail();
-	}
-	
-	public String getFirstname() {
-		return user.getFirstname();
+		return user.getEmail();
 	}
 
 	@Override
@@ -63,3 +61,5 @@ public class CustomerUserDetail implements UserDetails{
 	}
 
 }
+
+
