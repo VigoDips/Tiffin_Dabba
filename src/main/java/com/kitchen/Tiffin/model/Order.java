@@ -1,5 +1,7 @@
 package com.kitchen.Tiffin.model;
 
+import java.util.Date;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -22,15 +24,15 @@ public class Order {
     private Payment payment;
     
     @ManyToOne
-    @JoinColumn(name = "user_id", referencedColumnName = "user_id", insertable = false, updatable = false)
+    @JoinColumn(name = "user_id", referencedColumnName = "user_id")
     private User user;
     
     @ManyToOne
-    @JoinColumn(name = "pro_id", referencedColumnName = "pro_id", insertable = false, updatable = false)
+    @JoinColumn(name = "pro_id", referencedColumnName = "pro_id")
     private Product products;
 
     @Column(name = "date")
-    private int date;
+    private Date date;
 
     @Column(name = "name")
     private String name;
@@ -39,7 +41,7 @@ public class Order {
     private int quantity;
 
     @Column(name = "total")
-    private int total;
+    private double total;
 
     // Getters and setters
     public int getOrd_id() {
@@ -58,11 +60,11 @@ public class Order {
         this.payment = payment;
     }
 
-    public int getDate() {
+    public Date getDate() {
         return date;
     }
 
-    public void setDate(int date) {
+    public void setDate(Date date) {
         this.date = date;
     }
 
@@ -82,11 +84,29 @@ public class Order {
         this.name = name;
     }
 
-    public int getTotal() {
+    public double getTotal() {
         return total;
     }
 
-    public void setTotal(int total) {
+    public void setTotal(double total) {
         this.total = total;
     }
+
+	public User getUser() {
+		return user;
+	}
+
+	public void setUser(User user) {
+		this.user = user;
+	}
+
+	public Product getProducts() {
+		return products;
+	}
+
+	public void setProducts(Product products) {
+		this.products = products;
+	}
+    
+    
 }

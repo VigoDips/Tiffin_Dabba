@@ -39,12 +39,13 @@
         <div class="fas fa-search" id="search-btn"></div>
         <a href="/cart" id="cart-btn">
     <div class="fas fa-shopping-cart"></div>
-    <span th:text="${cartcount}"></span>
+    <span id="cart-count" th:text="${cartcount}"> </span>
 </a>
         
-        <div class="fas fa-user" id="login-btn"></div>
-      </div>
-
+       <a href="/login" id="login-btn">
+       <div class="fas fa-user" ></div>
+     </a> 
+     
       <form action="" class="search-form">
         <input type="search" id="search-box" placeholder="search here..." />
         <label for="search-box" class="fas fa-search"></label>
@@ -182,10 +183,10 @@
 
         <div class="swiper-wrapper">
 
-            <div class="swiper-slide box">
-                <img src="image/momo.png" alt="">
-                <h3>chicken momo</h3>
-                <div class="price"> rs 180 </div>
+          <div class="swiper-slide box" th:each="product : ${products}">
+                <img th:src="@{'image/' + ${product.imageFileName}}" alt="">
+                <h3 th:text="${product.name}"></h3>
+                <div class="price"  th:text="'Rs ' + ${product.price}"></div>
                 <div class="stars">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
@@ -193,13 +194,14 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star-half-alt"></i>
                 </div>
-                 <a th:href="@{'/addToCart/' + product.proId}" class="btn">add to cart</a>
+               <a th:href="@{'/addToCart/' + ${product.proId}}" class="btn">add to cart</a>
+               
             </div>
 
-            <div class="swiper-slide box">
-                <img src="image/biryani.png" alt="">
-                <h3>Biryani</h3>
-                <div class="price"> Rs 199 </div>
+            <div class="swiper-slide box" th:each="product : ${products}">
+                <img th:src="@{'image/' + ${product.imageFileName}}" alt="">
+                <h3 th:text="${product.name}"></h3>
+                <div class="price"  th:text="'Rs ' + ${product.price}"></div>
                 <div class="stars">
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star"></i>
@@ -207,7 +209,7 @@
                     <i class="fas fa-star"></i>
                     <i class="fas fa-star-half-alt"></i>
                 </div>
-               <a th:href="@{'/addToCart/' + ${product.proId}}" class="btn">Add to Cart</a>
+               <a th:href="@{'/addToCart/' + ${product.proId}}" class="btn">add to cart</a>
                
             </div>
 

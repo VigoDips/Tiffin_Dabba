@@ -20,7 +20,7 @@ public class HomeController {
 	
 	
 	
-    @GetMapping("/")
+    @GetMapping("/home")
 	public String showhome(Model model) {
     	model.addAttribute("cartcount",CartItem.cart.size());
 		return "home";

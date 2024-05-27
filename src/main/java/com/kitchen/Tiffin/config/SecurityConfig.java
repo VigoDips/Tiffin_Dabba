@@ -40,7 +40,7 @@ public class SecurityConfig {
 		
 		.authorizeHttpRequests(request -> request.requestMatchers("/admin-page")
 				.hasAuthority("ADMIN").requestMatchers("/user-page").hasAuthority("USER")
-				.requestMatchers("/registration", "/css/**","/image/**","/js/**").permitAll()
+				.requestMatchers("/registration","/addToCart/{proId}","/cart","/home", "/css/**","/image/**","/js/**").permitAll()
 				.anyRequest().authenticated())
 		
 		.formLogin(form -> form.loginPage("/login").loginProcessingUrl("/login")

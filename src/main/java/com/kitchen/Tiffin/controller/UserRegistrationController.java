@@ -1,6 +1,8 @@
 package com.kitchen.Tiffin.controller;
 
 import java.security.Principal;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -12,12 +14,16 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.kitchen.Tiffin.model.CartItem;
+import com.kitchen.Tiffin.model.Product;
+import com.kitchen.Tiffin.services.ProductService;
 import com.kitchen.Tiffin.services.UserService;
 import com.kitchen.Tiffin.web.dto.UserRegistrationDTO;
 
 @Controller
 public class UserRegistrationController {
 
+	@Autowired 
+	ProductService productService;
 	
 	@Autowired
 	UserDetailsService userDetailsService;
@@ -45,13 +51,20 @@ public class UserRegistrationController {
 		return "login";
 	}
 	
-	@GetMapping("user-page")
-	public String userPage (Model model, Principal principal) {
-		UserDetails userDetails = userDetailsService.loadUserByUsername(principal.getName());
-		model.addAttribute("user", userDetails);
-		model.addAttribute("cartcount",CartItem.cart.size());
-		return "home";
-	}
+    @GetMapping("user-page")
+    public String userPage(Model model, Principal principal) {
+        UserDetails userDetails = userDetailsService.loadUserByUsername(principal.getName());
+        model.addAttribute("user", userDetails);
+        List<Product> products = productService.getAllProduct();
+        model.addAttribute("products", products);
+        
+        
+        
+        model.addAttribute("cartcount", CartItem.cart.size());
+        
+        return "home";
+    }
+
 	
 	@GetMapping("admin-page")
 	public String adminPage (Model model, Principal principal) {

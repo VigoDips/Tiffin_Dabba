@@ -22,7 +22,7 @@ public class Product {
 	@Column
 	private String category;
 	@Column
-	private String quantity;
+	private int quantity;
 	@Column
 	private String imageFileName;
 	
@@ -56,10 +56,10 @@ public class Product {
 	public void setCategory(String category) {
 		this.category = category;
 	}
-	public String getQuantity() {
+	public int getQuantity() {
 		return quantity;
 	}
-	public void setQuantity(String quantity) {
+	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
 	public String getImageFileName() {

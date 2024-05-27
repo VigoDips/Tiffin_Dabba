@@ -22,6 +22,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.kitchen.Tiffin.model.Product;
 import com.kitchen.Tiffin.repository.ProductRepository;
+import com.kitchen.Tiffin.services.ProductService;
 import com.kitchen.Tiffin.web.dto.ProductDTO;
 
 import jakarta.validation.Valid;
@@ -29,7 +30,8 @@ import jakarta.validation.Valid;
 @Controller
 
 public class ProductsController {
-
+      
+	
 	@Autowired
 	private ProductRepository pro_repo;
 	

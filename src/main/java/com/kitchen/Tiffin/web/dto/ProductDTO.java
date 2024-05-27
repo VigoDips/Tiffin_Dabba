@@ -17,7 +17,7 @@ public class ProductDTO {
 	private String category;
 	
 	@NotEmpty(message="Quantity Is Required.")
-	private String quantity;
+	private int quantity;
 	
 	private MultipartFile imageFileName;
 
@@ -45,11 +45,11 @@ public class ProductDTO {
 		this.category = category;
 	}
 
-	public String getQuantity() {
+	public int getQuantity() {
 		return quantity;
 	}
 
-	public void setQuantity(String quantity) {
+	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
 

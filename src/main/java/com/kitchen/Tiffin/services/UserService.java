@@ -5,4 +5,5 @@ import com.kitchen.Tiffin.web.dto.UserRegistrationDTO;
 
 public interface UserService {
     User save(UserRegistrationDTO registrationDto);
+    User getCurrentUser();
 }
